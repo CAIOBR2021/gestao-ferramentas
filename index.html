@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Almoxarifado - Ferramentas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <main>
+        <div class="logo-container">
+            <img src="./assets/logo.png" alt="Logo Construtora Dinâmica">
+        </div>
+
+        <form id="tool-request-form">
+            <h1>Controle de Almoxarifado - FERRAMENTAS</h1>
+
+            <fieldset>
+                <legend>Seção 1: Identificação da Solicitação</legend>
+
+                <div class="form-group">
+                    <label for="solicitante">1. Nome do solicitante</label>
+                    <input type="text" id="solicitante" name="solicitante" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="setor">2. Setor ou obra vinculada</label>
+                    <input type="text" id="setor" name="setor" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="data-solicitacao">3. Data da Solicitação</label>
+                    <input type="date" id="data-solicitacao" name="data_solicitacao" class="date-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="finalidade">4. Finalidade do uso</label>
+                    <textarea id="finalidade" name="finalidade"
+                        placeholder="Descreva brevemente a atividade onde a ferramenta será usada"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Seção 2: Detalhes da Ferramenta</legend>
+
+                <div class="form-group">
+                    <label for="tipo-ferramenta">1. Tipo de ferramenta</label>
+                    <input type="text" id="tipo-ferramenta" name="tipo_ferramenta" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantidade">2. Quantidade solicitada</label>
+                    <input type="number" id="quantidade" name="quantidade" min="1" value="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label>3. Status da ferramenta (Na retirada)</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="status-nova" name="status_ferramenta" value="nova" checked>
+                            <label for="status-nova">Nova (Sem uso)</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="status-usada-ok" name="status_ferramenta" value="usada_bom_estado">
+                            <label for="status-usada-ok">Usada (Em bom estado)</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="status-usada-avarias" name="status_ferramenta"
+                                value="usada_avarias_leves">
+                            <label for="status-usada-avarias">Usada (Com avarias leves, mas funcional)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="data-devolucao">4. Data prevista para devolução</label>
+                    <input type="date" id="data-devolucao" name="data_devolucao" class="date-input">
+                </div>
+
+                <div class="form-group">
+                    <label for="observacoes">5. Observações adicionais</label>
+                    <textarea id="observacoes" name="observacoes"
+                        placeholder="Detalhes sobre a condição, urgência ou local..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="foto-avaria">6. Foto de avaria ou detalhe</label>
+                    <input type="file" id="foto-avaria" name="foto_avaria" accept="image/*,application/pdf">
+                </div>
+
+            </fieldset>
+
+            <button type="submit">Enviar Solicitação</button>
+        </form>
+    </main>
+
+</body>
+
+</html>

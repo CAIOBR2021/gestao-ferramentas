@@ -1,0 +1,278 @@
+/* Define as variáveis de cor com base no logo */
+:root {
+    --primary-dark: #0D2B4D; /* Azul escuro do logo */
+    --primary-accent: #FDB913; /* Dourado do logo */
+    --text-dark: #212529;
+    --text-light: #f8f9fa;
+    --border-light: #ced4da;
+    --bg-light: #f8f9fa;
+    --bg-white: #ffffff;
+}
+
+/* Reset básico e definição da fonte */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+main {
+    max-width: 750px;
+    margin: 30px auto;
+    padding: 20px;
+    /* Transição suave para mudanças de tamanho */
+    transition: all 0.3s ease;
+}
+
+/* --- LOGO --- */
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.logo-container img {
+    max-width: 300px;
+    height: auto;
+    /* Transição suave para mudanças de tamanho */
+    transition: max-width 0.3s ease;
+}
+
+/* --- Formulário Principal --- */
+form {
+    padding: 30px 40px;
+    background-color: var(--bg-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    /* Transição suave para mudanças de tamanho */
+    transition: padding 0.3s ease;
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-dark);
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+/* --- Seções do Formulário --- */
+fieldset {
+    border: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+legend {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: var(--primary-dark);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--primary-accent);
+    width: 100%;
+}
+
+/* --- Campos do Formulário --- */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+textarea,
+input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid var(--border-light);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Efeito de Foco elegante */
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-accent);
+    box-shadow: 0 0 8px rgba(253, 185, 19, 0.3);
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* --- Botões de Rádio Customizados --- */
+.radio-group {
+    padding-top: 5px;
+}
+.radio-option {
+    position: relative;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+.radio-option label {
+    padding-left: 35px; /* Espaço para o círculo customizado */
+    font-weight: 400;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+.radio-option input[type="radio"] {
+    opacity: 0; /* Esconde o botão original */
+    position: absolute;
+}
+
+/* Círculo externo customizado */
+.radio-option label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-light);
+    border-radius: 50%;
+    transition: border-color 0.3s ease;
+}
+
+/* Ponto interno customizado (visível quando selecionado) */
+.radio-option label::after {
+    content: '';
+    position: absolute;
+    left: 6px; /* 2px borda + 4px espaço */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--primary-accent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Mostra o ponto interno ao selecionar */
+.radio-option input[type="radio"]:checked + label::after {
+    opacity: 1;
+}
+/* Muda a cor da borda ao selecionar */
+.radio-option input[type="radio"]:checked + label::before {
+    border-color: var(--primary-dark);
+}
+/* Efeito de foco para acessibilidade */
+.radio-option input[type="radio"]:focus + label::before {
+    box-shadow: 0 0 8px rgba(253, 185, 19, 0.3);
+}
+
+
+/* --- Botão de Upload de Arquivo --- */
+input[type="file"] {
+    font-size: 0.9em;
+    color: #555;
+}
+
+input[type="file"]::file-selector-button {
+    padding: 8px 15px;
+    margin-right: 15px;
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: #e9ecef;
+}
+
+
+/* --- Botão de Envio --- */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-dark);
+    color: var(--bg-white);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--primary-accent);
+    color: var(--primary-dark);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/*
+============================================================
+== SEÇÃO RESPONSIVA (MOBILE) ==
+============================================================
+*/
+
+/* Aplica estes estilos quando a tela for 768px ou menor */
+@media (max-width: 768px) {
+    body {
+        /* Remove o fundo cinza nas laterais em telas pequenas */
+        background-color: var(--bg-white);
+    }
+
+    main {
+        /* Remove margens e padding para o formulário ocupar a tela */
+        margin: 0;
+        padding: 0;
+    }
+
+    form {
+        /* Remove a sombra e o padding extra no mobile */
+        box-shadow: none;
+        border-radius: 0;
+        padding: 20px;
+    }
+
+    .logo-container img {
+        /* Diminui um pouco o logo em telas menores */
+        max-width: 250px;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    legend {
+        font-size: 1.15rem;
+    }
+
+    button[type="submit"] {
+        padding: 14px;
+        font-size: 1rem;
+    }
+}
