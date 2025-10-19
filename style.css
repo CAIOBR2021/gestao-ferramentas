@@ -136,6 +136,7 @@ textarea {
     font-weight: 400;
     cursor: pointer;
     margin-bottom: 0;
+    line-height: 1.2; /* <-- Adicione esta linha (ou line-height: 1;) */
 }
 .radio-option input[type="radio"] {
     opacity: 0; /* Esconde o botão original */
