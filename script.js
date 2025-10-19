@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         submitButton.disabled = true;
 
         // Envia os dados para o backend na porta 3000
-        fetch('http://localhost:3000/submit-form', {
+        fetch('https://ferramentas-back-end-vercel.vercel.app/submit-form', {
             method: 'POST',
             body: formData, 
             // Não defina 'Content-Type', o FormData faz isso automaticamente
