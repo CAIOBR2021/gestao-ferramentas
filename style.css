@@ -129,14 +129,12 @@ textarea {
     position: relative;
     margin-bottom: 12px;
     display: flex;
-    align-items: center;
 }
 .radio-option label {
     padding-left: 35px; /* Espaço para o círculo customizado */
     font-weight: 400;
     cursor: pointer;
     margin-bottom: 0;
-    line-height: 1; /* <-- Adicione esta linha (ou line-height: 1;) */
 }
 .radio-option input[type="radio"] {
     opacity: 0; /* Esconde o botão original */
